@@ -13,18 +13,29 @@
  *     limitations under the License.
  */
 
-package at.rodrigo.api.gateway.rest.repository;
+package at.rodrigo.test.schema;
 
-import at.rodrigo.api.gateway.entity.Api;
-import org.springframework.data.mongodb.repository.MongoRepository;
+import lombok.Data;
 
-import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-public interface ApiRepository extends MongoRepository<Api, String> {
+@Data
+@Entity
+@Table(name="COUNTRY")
+public class Country {
+    @Id
+    @Column(name="iso")
+    private String iso;
 
-    List<Api> findAllBySwagger(boolean swagger);
-    Api findByName(String apiName);
-    Api findByContext(String apiContext);
+    @Column(name="name")
+    private String name;
 
+    @Column(name="printable_name")
+    private String printableName;
 
+    @Column(name="iso3")
+    private String iso3;
 }

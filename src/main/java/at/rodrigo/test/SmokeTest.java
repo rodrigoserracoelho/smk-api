@@ -13,15 +13,15 @@
  *     limitations under the License.
  */
 
-package at.rodrigo.api.gateway.rest.configuration;
+package at.rodrigo.test;
 
-public class CacheConstants {
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-    private CacheConstants() {
-        throw new IllegalStateException("Utility class");
+@SpringBootApplication
+public class SmokeTest {
+
+    public static void main(String[] args) {
+        SpringApplication.run(SmokeTest.class, args);
     }
-
-    public static final String RUNNING_API_IMAP_NAME = "runningApi";
-    public static final String API_IMAP_NAME = "api";
-    public static final String THROTTLING_POLICIES_IMAP_NAME = "throttlingPolicies";
 }
